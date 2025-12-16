@@ -41,16 +41,29 @@
     .photo-wrapper {
       position: relative;
       overflow: hidden;
-      margin-bottom: 48px;
-      height: 380px; /* un poco más alto */
+      margin-bottom: 56px;
+      height: 380px;
     }
 
     .photo-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 55%; /* foco más bajo */
+      object-position: center 55%;
       display: block;
+    }
+
+    /* OVERLAY OSCURO SUTIL */
+    .photo-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15,17,19,0.25),
+        rgba(15,17,19,0.55)
+      );
+      z-index: 1;
     }
 
     /* GRANO */
@@ -62,22 +75,31 @@
       opacity: 0.18;
       mix-blend-mode: overlay;
       pointer-events: none;
+      z-index: 2;
+    }
+
+    /* TEXTO SOBRE HERO */
+    .hero-text {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      z-index: 3;
+    }
+
+    .hero-text h1 {
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .hero-text h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
     }
 
     header {
-      margin-bottom: 40px;
-    }
-
-    h1 {
-      font-size: 36px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--text-secondary);
+      display: none; /* ya no se usa */
     }
 
     .divider {
@@ -114,7 +136,11 @@
     /* MÓVIL */
     @media (max-width: 600px) {
       .photo-wrapper {
-        height: 240px;
+        height: 260px;
+      }
+
+      .hero-text h1 {
+        font-size: 26px;
       }
     }
   </style>
@@ -126,12 +152,12 @@
     <!-- HERO FOTO -->
     <div class="photo-wrapper">
       <img src="assets/photo-main.jpg" alt="Studio / Live Sound – Ramón Moreira">
-    </div>
 
-    <header>
-      <h1>Ramón Moreira</h1>
-      <h2>Tontechniker · Audioproduzent</h2>
-    </header>
+      <div class="hero-text">
+        <h1>Ramón Moreira</h1>
+        <h2>Tontechniker · Audioproduzent</h2>
+      </div>
+    </div>
 
     <div class="divider"></div>
 
