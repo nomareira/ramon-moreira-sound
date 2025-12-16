@@ -53,7 +53,7 @@
       display: block;
     }
 
-    /* OVERLAY OSCURO SUTIL */
+    /* OVERLAY OSCURO */
     .photo-wrapper::before {
       content: "";
       position: absolute;
@@ -78,19 +78,17 @@
       z-index: 2;
     }
 
-    /* TEXTO HERO CENTRADO */
-   .hero-text {
-  position: absolute;
-  left: 50%;
-  top: 62%;              /* aquí está la clave */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 3;
+    /* TEXTO HERO */
+    .hero-text {
+      position: absolute;
+      left: 50%;
+      top: 68%; /* más abajo, alineado con la silla */
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 3;
 
-  animation: fadeUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
+      animation: fadeUp 1.2s ease-out forwards;
+      opacity: 0;
     }
 
     .hero-text h1 {
@@ -102,36 +100,24 @@
     .hero-text h2 {
       font-size: 16px;
       font-weight: 400;
-      color: var(--text-secondary);
-      letter-spacing: 0.04em;
+      color: var(--accent); /* ámbar */
+      letter-spacing: 0.05em;
     }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translate(-50%, -42%);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
       }
     }
 
     p {
       font-size: 18px;
       margin-bottom: 20px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.25s ease;
-    }
-
-    a:hover {
-      color: var(--text-main);
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
     }
 
     .hint {
@@ -148,6 +134,10 @@
         height: 260px;
       }
 
+      .hero-text {
+        top: 70%;
+      }
+
       .hero-text h1 {
         font-size: 28px;
       }
@@ -158,7 +148,7 @@
 <body>
   <div class="container">
 
-    <!-- HERO FOTO -->
+    <!-- HERO -->
     <div class="photo-wrapper">
       <img src="assets/photo-main.jpg" alt="Studio / Live Sound – Ramón Moreira">
 
@@ -174,8 +164,8 @@
         <strong>25 Jahren Berufserfahrung</strong> in den Bereichen
         <strong>Musikproduktion, Live-Sound, Postproduktion und audiovisuelle Projekte</strong>.
         Meine berufliche Laufbahn begann Anfang der 1990er-Jahre mit einem Studium der
-        <strong>Filmproduktion</strong> in Madrid, mit Schwerpunkt auf
-        Direktem Ton, Audio-Postproduktion, Montage und audiovisueller Gestaltung.
+        <strong>Filmproduktion</strong> in Madrid, mit Schwerpunkt auf Direktem Ton,
+        Audio-Postproduktion, Montage und audiovisueller Gestaltung.
       </p>
 
       <p>
